@@ -1,0 +1,21 @@
+version: "3.4"
+
+services: 
+
+  scope-test:
+    build:
+      context: ../
+      dockerfile: ./.scope/Dockerfile
+    environment: 
+      - CI
+      - SCOPE_APIKEY
+      - SCOPE_API_ENDPOINT
+      - CIRCLECI
+      - CIRCLE_BUILD_NUM
+      - CIRCLE_BUILD_URL
+      - JENKINS_URL
+      - BUILD_ID
+      - BUILD_NUMBER
+      - BUILD_URL
+      - GIT_COMMIT=$GIT_COMMIT
+  
